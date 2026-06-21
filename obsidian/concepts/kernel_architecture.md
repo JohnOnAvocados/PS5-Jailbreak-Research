@@ -23,6 +23,8 @@ The kernel serves as the primary interface between user-mode code and both hardw
 - [[security_model]]
 - [[boot_chain]]
 - [[system_architecture]]
+- [[syscall_catalog]]
+- [[gpu_dma_exploitation]]
 
 ## Security Relevance
 

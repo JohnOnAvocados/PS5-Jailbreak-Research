@@ -21,6 +21,8 @@ The various motherboard revisions across FAT, Slim, and Pro chassis mean that ex
 - [[kernel_architecture]]
 - [[hypervisor_architecture]]
 - [[security_model]]
+- [[iommu_architecture]]
+- [[gpu_dma_exploitation]]
 
 ## Security Relevance
 

@@ -23,6 +23,8 @@ The hypervisor does not perform traditional device emulation such as emulating n
 - [[security_model]]
 - [[boot_chain]]
 - [[system_architecture]]
+- [[iommu_architecture]]
+- [[gpu_dma_exploitation]]
 
 ## Security Relevance
 

@@ -1,0 +1,290 @@
+[
+  {
+    "step": "ingest",
+    "status": "started",
+    "detail": "",
+    "ts": 1782033308.615344
+  },
+  {
+    "step": "ingest",
+    "status": "finished",
+    "detail": "",
+    "ts": 1782033308.6394446
+  },
+  {
+    "step": "normalize",
+    "status": "started",
+    "detail": "",
+    "ts": 1782033308.6575704
+  },
+  {
+    "step": "normalize",
+    "status": "finished",
+    "detail": "",
+    "ts": 1782033308.688355
+  },
+  {
+    "step": "extract",
+    "status": "started",
+    "detail": "",
+    "ts": 1782033308.702684
+  },
+  {
+    "step": "extract",
+    "status": "finished",
+    "detail": "",
+    "ts": 1782033308.7341182
+  },
+  {
+    "step": "link",
+    "status": "started",
+    "detail": "",
+    "ts": 1782033308.7476828
+  },
+  {
+    "step": "link",
+    "status": "finished",
+    "detail": "",
+    "ts": 1782033308.7714624
+  },
+  {
+    "step": "graph",
+    "status": "started",
+    "detail": "",
+    "ts": 1782033308.7970474
+  },
+  {
+    "step": "graph",
+    "status": "finished",
+    "detail": "",
+    "ts": 1782033308.8147643
+  },
+  {
+    "step": "obsidian_sync",
+    "status": "started",
+    "detail": "",
+    "ts": 1782033308.8289201
+  },
+  {
+    "step": "obsidian_sync",
+    "status": "finished",
+    "detail": "",
+    "ts": 1782033308.862283
+  },
+  {
+    "step": "wiki_sync",
+    "status": "started",
+    "detail": "",
+    "ts": 1782033308.8780012
+  },
+  {
+    "step": "wiki_sync",
+    "status": "finished",
+    "detail": "",
+    "ts": 1782033308.8974166
+  },
+  {
+    "step": "report_builder",
+    "status": "started",
+    "detail": "",
+    "ts": 1782033308.9163356
+  },
+  {
+    "step": "report_builder",
+    "status": "finished",
+    "detail": "",
+    "ts": 1782033308.9349003
+  },
+  {
+    "step": "ingest",
+    "status": "started",
+    "detail": "",
+    "ts": 1782033876.7632656
+  },
+  {
+    "step": "ingest",
+    "status": "finished",
+    "detail": "",
+    "ts": 1782033876.87614
+  },
+  {
+    "step": "normalize",
+    "status": "started",
+    "detail": "",
+    "ts": 1782033876.889181
+  },
+  {
+    "step": "normalize",
+    "status": "finished",
+    "detail": "",
+    "ts": 1782033877.2162883
+  },
+  {
+    "step": "extract",
+    "status": "started",
+    "detail": "",
+    "ts": 1782033877.2224185
+  },
+  {
+    "step": "extract",
+    "status": "finished",
+    "detail": "",
+    "ts": 1782033877.7949357
+  },
+  {
+    "step": "link",
+    "status": "started",
+    "detail": "",
+    "ts": 1782033877.8122478
+  },
+  {
+    "step": "link",
+    "status": "finished",
+    "detail": "",
+    "ts": 1782033878.3299422
+  },
+  {
+    "step": "graph",
+    "status": "started",
+    "detail": "",
+    "ts": 1782033878.3467872
+  },
+  {
+    "step": "graph",
+    "status": "finished",
+    "detail": "",
+    "ts": 1782033878.5156455
+  },
+  {
+    "step": "obsidian_sync",
+    "status": "started",
+    "detail": "",
+    "ts": 1782033878.5359502
+  },
+  {
+    "step": "obsidian_sync",
+    "status": "finished",
+    "detail": "",
+    "ts": 1782033879.0267475
+  },
+  {
+    "step": "wiki_sync",
+    "status": "started",
+    "detail": "",
+    "ts": 1782033879.043402
+  },
+  {
+    "step": "wiki_sync",
+    "status": "finished",
+    "detail": "",
+    "ts": 1782033879.1037223
+  },
+  {
+    "step": "report_builder",
+    "status": "started",
+    "detail": "",
+    "ts": 1782033879.1232834
+  },
+  {
+    "step": "report_builder",
+    "status": "finished",
+    "detail": "",
+    "ts": 1782033879.1645083
+  },
+  {
+    "step": "ingest",
+    "status": "started",
+    "detail": "",
+    "ts": 1782034796.3388731
+  },
+  {
+    "step": "ingest",
+    "status": "finished",
+    "detail": "",
+    "ts": 1782034796.6155758
+  },
+  {
+    "step": "normalize",
+    "status": "started",
+    "detail": "",
+    "ts": 1782034796.633471
+  },
+  {
+    "step": "normalize",
+    "status": "finished",
+    "detail": "",
+    "ts": 1782034796.7542565
+  },
+  {
+    "step": "extract",
+    "status": "started",
+    "detail": "",
+    "ts": 1782034796.7760942
+  },
+  {
+    "step": "extract",
+    "status": "finished",
+    "detail": "",
+    "ts": 1782034797.009333
+  },
+  {
+    "step": "link",
+    "status": "started",
+    "detail": "",
+    "ts": 1782034797.033357
+  },
+  {
+    "step": "link",
+    "status": "finished",
+    "detail": "",
+    "ts": 1782034797.2770236
+  },
+  {
+    "step": "graph",
+    "status": "started",
+    "detail": "",
+    "ts": 1782034797.299687
+  },
+  {
+    "step": "graph",
+    "status": "finished",
+    "detail": "",
+    "ts": 1782034797.4892554
+  },
+  {
+    "step": "obsidian_sync",
+    "status": "started",
+    "detail": "",
+    "ts": 1782034797.5178506
+  },
+  {
+    "step": "obsidian_sync",
+    "status": "finished",
+    "detail": "",
+    "ts": 1782034797.9841037
+  },
+  {
+    "step": "wiki_sync",
+    "status": "started",
+    "detail": "",
+    "ts": 1782034798.004868
+  },
+  {
+    "step": "wiki_sync",
+    "status": "finished",
+    "detail": "",
+    "ts": 1782034798.1005573
+  },
+  {
+    "step": "report_builder",
+    "status": "started",
+    "detail": "",
+    "ts": 1782034798.1260521
+  },
+  {
+    "step": "report_builder",
+    "status": "finished",
+    "detail": "",
+    "ts": 1782034798.2053986
+  }
+]

@@ -21,6 +21,11 @@ The system manages backwards compatibility through multiple mechanisms: a PS4 em
 - [[kernel_architecture]]
 - [[hypervisor_architecture]]
 - [[security_model]]
+- [[mast1c0re_jit_pipeline]]
+- [[y2jb_sandbox_escape]]
+- [[gpu_dma_exploitation]]
+- [[iommu_architecture]]
+- [[syscall_catalog]]
 
 ## Security Relevance
 

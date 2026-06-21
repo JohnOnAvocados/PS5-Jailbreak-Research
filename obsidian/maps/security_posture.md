@@ -17,7 +17,9 @@ Boot ROM (immutable, fused keys)
 - [[boot_chain]] — cryptographic stage transitions, anti-rollback nonces
 - [[secure_boot]] — key hierarchy (RSA-4096 → RSA-3072 → AES-128-CBC)
 - [[hypervisor_architecture]] — nested page tables, IOMMU, partition isolation
+- [[iommu_architecture]] — DMA protection, device table, hypercall interface
 - [[kernel_architecture]] — XOM enforcement, SceSbl dispatch, capability sandboxing
+- [[syscall_catalog]] — 500+ syscalls, PS5-specific extensions, exploit targets
 - [[security_model]] — Auth IDs, PAIDs, secure modules, Keystone
 
 ## Attack Surface Layers
@@ -32,8 +34,10 @@ Boot ROM (immutable, fused keys)
 
 ## Known Exploit Categories
 
-- **WebKit** — userland entry point (Y2JB up to FW 13.40)
-- **Kernel** — privilege escalation (kqueueex, netcontrol, umtx_shm)
+- **WebKit/V8** — userland entry point (Y2JB up to FW 13.40, [[y2jb_sandbox_escape]])
+- **PS2 Emulator JIT** — design-level exploit (mast1c0re FW 2.00-13.00, [[mast1c0re_jit_pipeline]])
+- **GPU DMA** — bypasses kernel .data write protection (FW >=6.00, [[gpu_dma_exploitation]])
+- **Kernel** — privilege escalation (kqueueex, netcontrol, umtx_shm, [[syscall_catalog]])
 - **Hypervisor** — full control (TMR OOB, Byepervisor, Prosperous, up to FW 6.02)
 - **Boot Chain** — currently no public boot ROM exploits
 

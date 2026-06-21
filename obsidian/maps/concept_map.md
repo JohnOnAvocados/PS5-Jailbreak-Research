@@ -2,6 +2,15 @@
 
 ## Hardware Layer
 - [[hardware_architecture]]
+- [[iommu_architecture]]
+
+## Attack Surface Layer
+- [[gpu_dma_exploitation]]
+- [[syscall_catalog]]
+
+## Userland Layer
+- [[y2jb_sandbox_escape]]
+- [[mast1c0re_jit_pipeline]]
 
 ## Firmware Layer
 - [[boot_chain]]

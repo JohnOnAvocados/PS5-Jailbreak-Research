@@ -24,6 +24,9 @@ The interaction between layers is the critical architectural feature: the kernel
 - [[kernel_architecture]]
 - [[hypervisor_architecture]]
 - [[system_architecture]]
+- [[y2jb_sandbox_escape]]
+- [[mast1c0re_jit_pipeline]]
+- [[syscall_catalog]]
 
 ## Security Relevance
 
