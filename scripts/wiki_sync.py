@@ -38,7 +38,7 @@ def run():
     WIKI.mkdir(parents=True, exist_ok=True)
     (WIKI / "sections").mkdir(exist_ok=True)
 
-    (WIKI / "Home.md").write_text(page_home(graph), encoding="utf-8")
+    (WIKI / "_Pipeline_Home.md").write_text(page_home(graph), encoding="utf-8")
 
     by_layer = {}
     for node in graph.get("nodes", []):
