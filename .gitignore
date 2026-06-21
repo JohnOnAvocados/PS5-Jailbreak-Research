@@ -20,5 +20,10 @@ __pycache__/
 venv/
 .venv/
 
+# Obsidian auto-generated
+Untitled.canvas
+2026-06-21.md
+2026-06-*.md
+
 # Temp
 *.tmp
