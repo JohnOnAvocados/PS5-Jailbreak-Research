@@ -17,13 +17,16 @@
 
 ### Hypervisor
 - [Hypervisor Overview](sections/hypervisor)
+- [Hypervisor Version Diffing](Hypervisor_Version_Diffing)
 - [IOMMU Architecture](research/hypervisor/iommu_architecture)
 
 ### Kernel
 - [Kernel Overview](sections/kernel)
-- [Syscall Catalog](research/kernel/syscall_catalog)
-- [GPU DMA Exploitation](research/kernel/gpu_dma_exploitation)
 - [Kernel Exploit Landscape](Kernel_Exploit_Landscape)
+- [GPU DMA Exploitation Internals](GPU_DMA_Exploitation_Internals)
+- [Syscall Catalog](research/kernel/syscall_catalog)
+- [Secure Module Catalog](Secure_Module_Catalog)
+- [IOCTL Device Reference](IOCTL_Device_Reference)
 
 ### Userland
 - [Y2JB Sandbox Escape](research/userland/y2jb_sandbox_escape)
@@ -42,6 +45,8 @@
 - [Topics Index](Topics)
 - [Research Roadmap](research/analysis/research_roadmap)
 - [Pipeline Report](reports/final_system_summary)
+- [Maintenance Guide](Maintenance_Guide)
+- [Contributing](Contributing)
 - [Obsidian Concept Map](obsidian/maps/concept_map)
 - [Obsidian Security Posture](obsidian/maps/security_posture)
 

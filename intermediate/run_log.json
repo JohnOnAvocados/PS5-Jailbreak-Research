@@ -298,5 +298,17 @@
     "status": "finished",
     "detail": "",
     "ts": 1782036706.3202915
+  },
+  {
+    "step": "wiki_sync",
+    "status": "started",
+    "detail": "",
+    "ts": 1782037718.5585165
+  },
+  {
+    "step": "wiki_sync",
+    "status": "finished",
+    "detail": "",
+    "ts": 1782037718.5966258
   }
 ]
