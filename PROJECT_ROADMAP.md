@@ -1,37 +1,24 @@
 # Project Roadmap
 
-## Phase 1: Foundation
-- [x] Repository initialized
-- [x] Directory structure created (research/, sources/, reports/)
-- [x] Markdown scaffolding complete
-- [ ] Source material collection begins
+## Phase 1 — Stabilize pipeline
+- ingestion
+- normalization
+- extraction
+- linking
+- graph build
 
-## Phase 2: Architecture (priority 1)
-Prerequisites: none
-- [ ] SoC architecture documentation
-- [ ] Memory map / IOMMU layout
-- [ ] Processor exception levels
-- [ ] Hardware security mechanisms
+## Phase 2 — Knowledge surfaces
+- GitHub Wiki export
+- Obsidian second-brain layer
 
-## Phase 3: Firmware (priority 2a)
-Prerequisites: architecture
-- [ ] Boot chain mapping
-- [ ] Secure boot analysis
-- [ ] Firmware update mechanism
+## Phase 3 — Query capability
+- graph traversal
+- node lookup
+- relationship lookup
+- layer search
 
-## Phase 3: Exploit History (priority 2b)
-Prerequisites: architecture (partial)
-- [ ] WebKit/JS engine exploits
-- [ ] Kernel exploit history
-- [ ] Hypervisor escapes
-
-## Phase 4: Analysis (priority 3)
-Prerequisites: architecture, firmware, exploit history
-- [ ] Attack surface enumeration
-- [ ] Mitigation assessment
-- [ ] Fuzzing target identification
-
-## Phase 5: Synthesis
-- [ ] Consolidated report
-- [ ] Bibliography
-- [ ] Future directions
+## Phase 4 — Quality improvements
+- better classification
+- more accurate links
+- richer summaries
+- report generation

@@ -1,22 +1,33 @@
-# AI Operating Rules
+# BOOTSTRAP INSTRUCTIONS
 
-You are a research and documentation engine.
+This repository is controlled by `controller.py` and the pipeline scripts.
 
-Your job:
-- Maintain consistency across files
-- Update project memory
-- Avoid repetition
-- Separate fact vs assumption
-- Prefer synthesis over quoting
+## Operating rules
 
-Rules:
-- Max 5% direct quotation
-- Always update:
-  - MASTER_CONTEXT.md
-  - research_log.md
-  - open_questions.md
+- read `SYSTEM_SPEC.md` first
+- preserve existing structure
+- do not rewrite working modules unless patching is required
+- treat the repo as a research graph, not a chat transcript
+- keep documentation synchronized across:
+  - `graph/`
+  - `wiki/`
+  - `obsidian/`
+  - `reports/`
 
-Output style:
-- structured
-- technical
-- concise
+## Runtime expectation
+
+The normal entry point is:
+
+```bash
+python controller.py full_run
+```
+
+## Output expectation
+
+Every pipeline run should refresh:
+- raw ingestion outputs
+- structured records
+- links
+- graph outputs
+- wiki pages
+- Obsidian notes

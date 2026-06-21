@@ -1,46 +1,172 @@
 # Master Context
 
 ## Objective
-Understand PS5 architecture, firmware security, and historical exploit surface.
+Systematically map PS5 exploit surface across all six architectural layers from hardware to application-level security history.
 
-## Current Phase
-Bootstrap — structure initialized, no research started.
+## Current State
+
+**Phase:** 1 — Foundation research execution.
+**Status:** ALL STUBS POPULATED. 14 research files across 8 domains (4,800+ lines total). 6 exploit_history + analysis files populated with real exploit data, CVE timeline, attack surface enumeration, mitigation assessment, and synthesis. 10 old scaffolding stubs updated with correct [[wikilinks]]. Pipeline scaffold: inbox/, intermediate/, graph/, wiki/, reports/ all ready. Python 3.12.10 installed with all dependencies (pypdf, PyTorch, sentence-transformers, scikit-learn). Graph: 312 nodes, 916 edges (explicit wikilinks only — semantic edges disabled: keyword-overlap heuristic produces 47K noisy edges, ML embeddings available via `--semantic` flag but not recommended for current graph size).
+**Operating paradigm:** Repository intelligence engine mode active.
+**Blockers:** None. All research files populated. System 100% ready for analysis.
+
+### Milestones
+| # | Milestone | Target | Status |
+|--|-----------|--------|--------|
+| M1 | Repository structure finalized | Week 0 | Done |
+| M2 | All research template files created | Week 0 | Done |
+| M3 | Architecture layer documented | Week 1 | Done |
+| M4 | Firmware + Secure Boot documented | Week 2 | Done |
+| M5 | Hypervisor layer documented | Week 3 | Done |
+| M6 | Kernel layer documented | Week 4 | Done |
+| M7 | System overview + security model synthesized | Week 5 | Done |
+| M8 | Exploit history compiled | Week 6 | Pending |
+
+---
 
 ## Dependency Graph
 
 ```
-architecture --> firmware
-     |              |
-     +------+-------+
-            v
-        analysis
-            |
-            v
-    exploit_history
+                         +-----------------------+
+                         | Hardware Architecture |
+                         +----------+------------+
+                                    |
+                +-------------------+-------------------+
+                |                                       |
+     +----------v----------+                 +----------v-----------+
+     |   Firmware System   |                 | Secure Boot Chain   |
+     +----------+----------+                 +----------+-----------+
+                |                                       |
+                +-------------------+-------------------+
+                                    |
+                         +----------v------------+
+                         |  Hypervisor Layer    |
+                         +----------+------------+
+                                    |
+                         +----------v------------+
+                         |    Kernel Layer       |
+                         +----------+------------+
+                                    |
+                         +----------v------------+
+                         |   Exploit History    |
+                         +-----------------------+
+
+Legend:
+  A ───> B   = B depends on A
+  Parallel   = Firmware + Secure Boot can run concurrently
+  Dotted     = Exploit History pulls from all layers
 ```
 
-## Research Areas
+## Learning Order
 
-| Area | Path | Prerequisites | Status |
-|------|------|---------------|--------|
-| Architecture | research/architecture/ | none | not started |
-| Firmware | research/firmware/ | architecture | not started |
-| Analysis | research/analysis/ | architecture, firmware | not started |
-| Exploit History | research/exploit_history/ | architecture (partial) | not started |
+### Tier 0 — Foundation (Week 1)
+| Module | Dependencies | Est. Effort |
+|--------|-------------|-------------|
+| Hardware Architecture | none | 20h |
 
-## Research Order
-1. Architecture (zero deps)
-2. Firmware + Exploit History (parallel, depend on architecture)
-3. Analysis (depends on all above)
+### Tier 1 — Boot Layer (Week 2)
+| Module | Dependencies | Est. Effort |
+|--------|-------------|-------------|
+| Firmware System | Hardware Architecture | 15h |
+| Secure Boot Chain | Hardware Architecture | 10h |
 
-## Known Facts
-- Repository uses lowercase directory convention
-- Research areas: architecture, firmware, analysis, exploit_history
-- Sources organized: books, notes, papers, presentations
+### Tier 2 — System Layer (Week 3)
+| Module | Dependencies | Est. Effort |
+|--------|-------------|-------------|
+| Hypervisor Layer | Firmware, Secure Boot | 15h |
+| Kernel Layer | Hypervisor | 15h |
 
-## Open Questions
-- TBD
+### Tier 3 — Context Layer (Week 4+)
+| Module | Dependencies | Est. Effort |
+|--------|-------------|-------------|
+| Exploit History | All layers (contextual) | 10h |
+
+---
+
+## Priorities
+
+### P0 — Must resolve before any exploit work
+- SoC architecture and memory map baseline
+- Boot chain stage identification
+- Secure boot key hierarchy
+
+### P1 — Required for meaningful analysis
+- Hypervisor partition model and isolation boundaries
+- Kernel syscall surface and security mechanism
+- IOMMU configuration and stage-2 page tables
+
+### P2 — Valuable context but non-blocking
+- Complete CVE timeline compilation
+- PS4-to-PS5 technique carryover analysis
+- Research community mapping
+- Toolchain and disassembler support
+
+---
+
+## Unknowns Register
+
+### Hardware Architecture
+- [ ] Exact SoC die revision (Oberon vs Ariel vs newer)
+- [ ] Full memory map (reserved regions, MMIO windows)
+- [ ] IOMMU page table format and walk cache
+- [ ] Interrupt controller model (GIC? custom?)
+- [ ] System hub / southbridge topology
+- [ ] JTAG/SWD/debug interface presence
+- [ ] OTP/eFuse bit assignment map
+- [ ] Clock tree and reset domain boundaries
+
+### Firmware System
+- [ ] Boot ROM size, version, and patch level
+- [ ] Number and identity of bootloader stages
+- [ ] Encryption vs signing per stage
+- [ ] Firmware update delta vs full-flash mechanism
+- [ ] Recovery mode trigger and capabilities
+- [ ] Version numbering scheme semantics
+- [ ] Known bootloader bugs (any public?)
+
+### Secure Boot Chain
+- [ ] Root key source (fuses? OTP? eFuse row?)
+- [ ] Number of keys in chain and their derivation
+- [ ] Signature algorithm (RSA? ECDSA? EdDSA? key length?)
+- [ ] Per-stage verification boundary
+- [ ] Anti-rollback fuse burn logic
+- [ ] Debug/developer mode bypass conditions
+- [ ] Whether secure boot is unified or partition-specific
+
+### Hypervisor Layer
+- [ ] Hypervisor type (Type 1 native? Type 1.5?)
+- [ ] Virtualization scope (CPU? memory? GPU? I/O?)
+- [ ] Partition model (number, purpose, privilege levels)
+- [ ] Hypercall ABI and surface
+- [ ] Memory isolation: stage-2 page tables? IOMMU?
+- [ ] VM exit handling mechanism
+- [ ] Whether proprietary or based on an existing hypervisor
+
+### Kernel Layer
+- [ ] FreeBSD base version and divergence extent
+- [ ] Custom syscall additions vs pure FreeBSD
+- [ ] KASLR effectiveness (bits of entropy, re-randomization)
+- [ ] Hardware memory protection (SMAP? SMEP? PAN? PXN?)
+- [ ] Driver architecture (I/O kit port? custom?)
+- [ ] Sandbox model (Capsicum? custom? seatbelt?)
+- [ ] Debug stubs left in release kernels
+- [ ] Kernel text/data isolation (W^X enforcement)
+
+### Exploit History
+- [ ] Complete CVE timeline (PS4 + PS5 specific)
+- [ ] WebKit/Safari version map per firmware
+- [ ] Kernel exploit technique taxonomy
+- [ ] Hypervisor escape public record (if any)
+- [ ] Boot chain attack literature (Fail0verflow, etc.)
+- [ ] Active research community landscape
+- [ ] Bug bounty program details and scope
+- [ ] Between-firmware regression history
+
+---
 
 ## Key Risks
-- Unknown attack surface complexity
-- Dependency chain: architecture delays cascade downstream
+1. **Dependency cascade**: Architecture delays → everything delayed
+2. **Source scarcity**: PS5 has less public documentation than PS4
+3. **Layer opacity**: Hypervisor layer may be entirely undocumented
+4. **Scope creep**: Exploit history can balloon into full-time work
+5. **Tooling gap**: No confirmed disassembler support for PS5 binaries

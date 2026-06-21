@@ -4,10 +4,21 @@ Thumbs.db
 
 # Obsidian (user-specific)
 .obsidian/workspace.json
+.obsidian/plugins/dataview/main.js
+.obsidian/plugins/dataview/styles.css
 
 # IDE
 .vscode/
 .idea/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Python venv
+venv/
+.venv/
 
 # Temp
 *.tmp

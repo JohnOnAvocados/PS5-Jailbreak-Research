@@ -1,0 +1,39 @@
+name: Research Pipeline
+
+on:
+  push:
+    paths:
+      - "inbox/**"
+      - "scripts/**"
+      - "research/**"
+      - "sources/**"
+      - "controller.py"
+      - "pipeline.py"
+      - "SYSTEM_SPEC.md"
+      - "CLAUDE.md"
+
+jobs:
+  run-pipeline:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install optional parser dependency
+        run: pip install pypdf
+
+      - name: Run pipeline
+        run: python pipeline.py
+
+      - name: Commit generated outputs
+        run: |
+          git config user.name "graph-bot"
+          git config user.email "bot@github.com"
+          git add graph wiki obsidian reports intermediate || true
+          git commit -m "auto: update research graph" || exit 0
+          git push

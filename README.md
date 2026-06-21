@@ -1,14 +1,26 @@
-# PS5 Security Research
+# PS5 Security Research Knowledge Base
 
-Structured research into PS5 architecture, firmware evolution, and public security analysis.
+This repository is a structured research workspace for PS5 hardware, firmware, kernel, hypervisor, boot-chain, and security-model analysis.
 
-## System
+## What this pack adds
 
-- GitHub = memory
-- Obsidian = navigation
-- OpenCode + Ollama = reasoning engine
-- NotebookLM = source extraction
+- deterministic Python pipeline
+- graph builder
+- query engine
+- GitHub Actions automation
+- Obsidian sync layer
+- GitHub Wiki export layer
 
-## Status
+## Main workflow
 
-Bootstrap phase
+`inbox/` → ingest → normalize → extract → link → graph → Obsidian/wiki sync
+
+## How to run
+
+```bash
+python controller.py full_run
+```
+
+## Notes
+
+This implementation is designed for defensive architecture research, documentation, and knowledge-base building.
