@@ -22,8 +22,10 @@ Build a versioned knowledge base of PS5 hardware, firmware, software, and securi
 - `inbox/` contains raw inputs
 - `intermediate/` stores pipeline outputs
 - `graph/` stores nodes, edges, and summaries
-- `wiki/` stores GitHub Wiki-ready pages
-- `obsidian/` stores a second-brain vault
+- `wiki/` stores GitHub Wiki-ready pages — this is the published deliverable, pushed to the
+  repo's actual GitHub Wiki (see `wiki/README_PUBLISHING.md`)
+- `obsidian/` is legacy/internal; no longer a maintained output (decision made 2026-10-21 —
+  the project moved from an Obsidian vault to the GitHub Wiki as the delivery format)
 - `reports/` stores synthesized reports
 
 ## Pipeline Contract
@@ -33,8 +35,7 @@ Build a versioned knowledge base of PS5 hardware, firmware, software, and securi
 3. extract structure
 4. build semantic links
 5. compile graph
-6. sync wiki
-7. sync Obsidian
+6. sync wiki (`wiki/` — publish from here to the GitHub Wiki)
 
 ## Writing Rules
 
