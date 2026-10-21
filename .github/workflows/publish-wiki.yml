@@ -1,0 +1,62 @@
+name: Publish Wiki
+
+# Pushes wiki/ to this repository's actual GitHub Wiki (a separate git repo
+# at <repo>.wiki.git). GitHub has no REST/GraphQL API for wiki content, so
+# a git push from a runner with repo-scoped credentials is the only
+# automatable path — see wiki/README_PUBLISHING.md.
+#
+# One-time prerequisite: the wiki must already have a first page created
+# through the GitHub web UI (Settings → Features → Wikis → enabled, then
+# the Wiki tab → "Create the first page"). Until that's done, <repo>.wiki.git
+# does not exist and this workflow's clone step will fail.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "wiki/**"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  publish-wiki:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Mirror wiki/ into the GitHub Wiki repo
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          REPO="${{ github.repository }}"
+          WORK_DIR="$(mktemp -d)"
+
+          git clone "https://x-access-token:${GH_TOKEN}@github.com/${REPO}.wiki.git" "$WORK_DIR/wiki_repo"
+
+          # Clear everything in the wiki repo except .git, then copy wiki/ in,
+          # skipping this publishing doc (it's about the main repo, not content).
+          find "$WORK_DIR/wiki_repo" -mindepth 1 -maxdepth 1 ! -name ".git" -exec rm -rf {} +
+          find wiki -mindepth 1 ! -name "README_PUBLISHING.md" -print0 | while IFS= read -r -d '' src; do
+            rel="${src#wiki/}"
+            dest="$WORK_DIR/wiki_repo/$rel"
+            if [ -d "$src" ]; then
+              mkdir -p "$dest"
+            else
+              mkdir -p "$(dirname "$dest")"
+              cp "$src" "$dest"
+            fi
+          done
+
+          cd "$WORK_DIR/wiki_repo"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No wiki changes to publish."
+            exit 0
+          fi
+          git commit -m "Sync wiki content from main repo wiki/ (${{ github.sha }})"
+          git push origin HEAD:master
