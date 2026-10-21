@@ -10,9 +10,10 @@ This repository is controlled by `controller.py` and the pipeline scripts.
 - treat the repo as a research graph, not a chat transcript
 - keep documentation synchronized across:
   - `graph/`
-  - `wiki/`
-  - `obsidian/`
+  - `wiki/` (the published deliverable — pushed to the repo's GitHub Wiki)
   - `reports/`
+- `obsidian/` is legacy/internal only; the project no longer delivers an Obsidian vault
+  (decision made 2026-10-21) — don't treat it as an output to keep current
 
 ## Runtime expectation
 
@@ -29,5 +30,4 @@ Every pipeline run should refresh:
 - structured records
 - links
 - graph outputs
-- wiki pages
-- Obsidian notes
+- wiki pages (`wiki/` — this is what gets pushed to the GitHub Wiki)

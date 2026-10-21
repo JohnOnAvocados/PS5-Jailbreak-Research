@@ -4,7 +4,7 @@
 
 A curated knowledge base for PS5 hardware, firmware, kernel, hypervisor, and security-model research. This wiki synthesizes public source data (psdevwiki, researcher publications, exploit documentation) with original deep research into a structured, cross-referenced graph.
 
-The wiki is maintained alongside an Obsidian vault (`obsidian/`), a knowledge graph (`graph/`), and a pipeline (`tools/controller.py`) that keeps all forms of documentation synchronized.
+The wiki is generated from a knowledge graph (`graph/`) by a pipeline (`tools/controller.py`), and published here as the project's GitHub Wiki.
 
 ## Quick Start
 
